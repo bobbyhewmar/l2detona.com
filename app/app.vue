@@ -1,6 +1,6 @@
 <template>
   <main class="flex flex-col items-center justify-center h-screen gap-8">
-    <NuxtImg class="mx-auto px-4" format="webp" src="/logo.png" />
+    <NuxtImg class="mx-auto px-4 h-72" format="webp" src="/logo.png" />
 
     <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
       <div class="flex flex-col mb-8">

@@ -39,7 +39,7 @@
         </ul>
       </div> -->
       <div class="navbar-end">
-        <NuxtLink to="https://app.l2detona.com/register" :external="true" class="btn btn-warning font-extrabold rounded-full">CREATE ACCOUNT</NuxtLink>
+        <NuxtLink to="https://app.l2detona.com/register" :external="true" class="btn bg-orange-400 hover:bg-orange-500 text-[#250906] font-extrabold rounded-full">CREATE ACCOUNT</NuxtLink>
       </div>
     </div>
   </nav>
@@ -92,7 +92,7 @@
       </div>
 
         <NuxtLink to="https://discord.gg/eUth6mTQzR" target="_blank" class="mb-8 min-2xl:mb-32">
-          <button class="btn btn-warning btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full">
+          <button class="btn btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full bg-orange-400 hover:bg-orange-500">
             DOWNLOAD NOW
           </button>
         </NuxtLink>

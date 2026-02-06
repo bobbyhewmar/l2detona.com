@@ -39,14 +39,14 @@
         </ul>
       </div> -->
       <div class="navbar-end">
-        <NuxtLink to="https://app.l2detona.com/register" :external="true" class="btn btn-primary">Register/Login</NuxtLink>
+        <NuxtLink to="https://app.l2detona.com/register" :external="true" class="btn btn-warning font-extrabold rounded-full">CRIAR CONTA</NuxtLink>
       </div>
     </div>
   </nav>
-  <section class="flex flex-col items-center h-screen bg-[url('/e509f273-819a-4520-9662-9525abcbe1b1.webp')] bg-cover bg-bottom">
+  <section class="flex flex-col items-center min-h-screen bg-[url('/e509f273-819a-4520-9662-9525abcbe1b1.webp')] bg-cover bg-bottom">
     <div class="flex flex-col items-center gap-0 w-full max-w-4xl mt-auto">
       <div
-        class="flex items-center justify-center w-full h-24 mb-4 bg-[linear-gradient(to_right,transparent_0%,white_35%,white_65%,transparent_100%)] text-base-100 gap-8">
+        class="flex items-center justify-center w-full h-24 mb-4 bg-[linear-gradient(to_right,transparent_0%,orange_35%,orange_65%,transparent_100%)] text-[#250906] gap-8">
         <div class="flex-1 flex flex-col text-right">
           <span class="text-2xl leading-7">CUSTOM PVP SERVER</span>
           <span class="font-extrabold text-4xl leading-6">INTERLUDE</span>
@@ -62,28 +62,28 @@
         </span>
       </div>
       <div class="grid auto-cols-max grid-flow-col gap-5 text-center mb-8 min-2xl:mb-32">
-        <div class="flex flex-col bg-black/75 rounded-2xl justify-center items-center aspect-square p-4">
+        <div class="flex flex-col bg-[#250906] rounded-2xl justify-center items-center aspect-square p-4">
           <span class="countdown font-mono text-5xl">
             <span :style="`--value:${days}; --digits: 2;`">{{ pad2(days) }}</span>
           </span>
           Dias
         </div>
 
-        <div class="flex flex-col bg-black/75 rounded-2xl justify-center items-center aspect-square p-4">
+        <div class="flex flex-col bg-[#250906] rounded-2xl justify-center items-center aspect-square p-4">
           <span class="countdown font-mono text-5xl">
             <span :style="`--value:${hours}; --digits: 2;`">{{ pad2(hours) }}</span>
           </span>
           Horas
         </div>
 
-        <div class="flex flex-col bg-black/75 rounded-2xl justify-center items-center aspect-square p-4">
+        <div class="flex flex-col bg-[#250906] rounded-2xl justify-center items-center aspect-square p-4">
           <span class="countdown font-mono text-5xl">
             <span :style="`--value:${minutes}; --digits: 2;`">{{ pad2(minutes) }}</span>
           </span>
           Min
         </div>
 
-        <div class="flex flex-col bg-black/75 rounded-2xl justify-center items-center aspect-square p-4">
+        <div class="flex flex-col bg-[#250906] rounded-2xl justify-center items-center aspect-square p-4">
           <span class="countdown font-mono text-5xl">
             <span :style="`--value:${seconds}; --digits: 2;`">{{ pad2(seconds) }}</span>
           </span>
@@ -91,6 +91,73 @@
         </div>
       </div>
     </div>
+  </section>
+  <section class="flex flex-col items-center min-h-screen bg-[url('/9ddbbce1-86c0-41ab-8ac6-dea76f6bbf28.webp')] bg-cover bg-top p-32">
+        <div class="flex items-center justify-center w-full max-w-[80%] py-3 mb-4 bg-[linear-gradient(to_right,transparent_0%,orange_35%,orange_65%,transparent_100%)] text-[#250906]">
+          <h1 class="text-5xl font-extrabold">
+            INFORMATIONS
+          </h1>
+        </div>
+        <p class="text-center text-lg max-w-2/3 mb-8">
+          Basic information about the server.<br>Other informations can be found in the server's <NuxtLink to="https://discord.gg/eUth6mTQzR" class="link link-accent font-bold" external target="_blank">Discord.</NuxtLink>
+        </p>
+
+        <div
+          class="flex items-center justify-center w-full py-2 mb-1 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          <div class="flex-1 flex flex-col text-right">
+            <span class="text-2xl">500X</span>
+          </div>
+          <div class="flex-1 text-3xl font-bold text-primary">
+            RATES
+          </div>
+        </div>
+
+        <div
+          class="flex items-center justify-center w-full py-2 mb-1 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          <div class="flex-1 flex flex-col text-right">
+            <span class="text-2xl">2x all rates</span>
+          </div>
+          <div class="flex-1 text-3xl font-bold text-primary">
+            VIP
+          </div>
+        </div>
+
+        <div
+          class="flex items-center justify-center w-full py-2 mb-1 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          <div class="flex-1 flex flex-col text-right">
+            <span class="text-2xl">+400 P.DEF/M.DEF</span>
+          </div>
+          <div class="flex-1 text-3xl font-bold text-primary">
+            ACCESSORY
+          </div>
+        </div>
+
+        <div
+          class="flex items-center justify-center w-full py-2 mb-1 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          <div class="flex-1 flex flex-col text-right">
+            <span class="text-2xl">52+4 Slots Schema Npc</span>
+          </div>
+          <div class="flex-1 text-3xl font-bold text-primary">
+            BUFFS
+          </div>
+        </div>
+
+        <div
+          class="flex items-center justify-center w-full py-2 mb-16 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          <div class="flex-1 flex flex-col text-right">
+            <span class="text-2xl">Safe +12 Max +25</span>
+          </div>
+          <div class="flex-1 text-3xl font-bold text-primary">
+            ENCHANT
+          </div>
+        </div>
+
+        <NuxtLink to="https://discord.gg/eUth6mTQzR" target="_blank">
+          <button class="btn btn-warning btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full">
+            DOWNLOAD NOW
+          </button>
+        </NuxtLink>
+
   </section>
   <dialog id="open_beta_detona" class="modal" open>
     <div class="modal-box bg-[url(/DIVUL_OBT.png)] bg-cover aspect-[1080/1350] max-md:p-8 p-16 flex justify-center items-end">

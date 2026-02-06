@@ -39,7 +39,7 @@
         </ul>
       </div> -->
       <div class="navbar-end">
-        <NuxtLink to="https://app.l2detona.com/register" :external="true" class="btn btn-warning font-extrabold rounded-full">CRIAR CONTA</NuxtLink>
+        <NuxtLink to="https://app.l2detona.com/register" :external="true" class="btn btn-warning font-extrabold rounded-full">CREATE ACCOUNT</NuxtLink>
       </div>
     </div>
   </nav>

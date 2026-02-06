@@ -66,28 +66,28 @@
           <span class="countdown font-mono text-5xl">
             <span :style="`--value:${days}; --digits: 2;`">{{ pad2(days) }}</span>
           </span>
-          Dias
+          Days
         </div>
 
         <div class="flex flex-col bg-[#250906] rounded-2xl justify-center items-center aspect-square p-4">
           <span class="countdown font-mono text-5xl">
             <span :style="`--value:${hours}; --digits: 2;`">{{ pad2(hours) }}</span>
           </span>
-          Horas
+          Hours
         </div>
 
         <div class="flex flex-col bg-[#250906] rounded-2xl justify-center items-center aspect-square p-4">
           <span class="countdown font-mono text-5xl">
             <span :style="`--value:${minutes}; --digits: 2;`">{{ pad2(minutes) }}</span>
           </span>
-          Min
+          Mins
         </div>
 
         <div class="flex flex-col bg-[#250906] rounded-2xl justify-center items-center aspect-square p-4">
           <span class="countdown font-mono text-5xl">
             <span :style="`--value:${seconds}; --digits: 2;`">{{ pad2(seconds) }}</span>
           </span>
-          Seg
+          Secs
         </div>
       </div>
 

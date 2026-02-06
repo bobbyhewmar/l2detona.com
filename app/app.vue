@@ -1,6 +1,6 @@
 <template>
   <nav class="bg-base-100/95 shadow-sm fixed top-0 left-0 right-0 z-50">
-    <div class="navbar max-w-6xl mx-auto">
+    <div class="navbar min-md:max-w-6xl mx-auto">
       <div class="navbar-start">
         <!-- <div class="dropdown">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -44,9 +44,9 @@
     </div>
   </nav>
   <section class="flex flex-col items-center min-h-screen bg-[url('/e509f273-819a-4520-9662-9525abcbe1b1.webp')] bg-cover bg-bottom">
-    <div class="flex flex-col items-center gap-0 w-full max-w-4xl mt-auto">
+    <div class="flex flex-col items-center gap-0 w-full min-md:max-w-4xl mt-auto">
       <div
-        class="flex items-center justify-center w-full h-24 mb-4 bg-[linear-gradient(to_right,transparent_0%,orange_35%,orange_65%,transparent_100%)] text-[#250906] gap-8">
+        class="flex items-center justify-center w-full h-24 mb-4 bg-[linear-gradient(to_right,transparent_0%,orange_35%,orange_65%,transparent_100%)] text-[#250906] gap-8 max-2xl:mt-80">
         <div class="flex-1 flex flex-col text-right">
           <span class="text-2xl leading-7">CUSTOM PVP SERVER</span>
           <span class="font-extrabold text-4xl leading-6">INTERLUDE</span>
@@ -56,12 +56,12 @@
         </div>
       </div>
       <div
-        class="w-full max-w-2xl h-16 flex justify-center items-center bg-[linear-gradient(to_right,transparent_0%,red_35%,red_65%,transparent_100%)] text-white mb-4">
+        class="w-full min-md:max-w-2xl h-16 flex justify-center items-center bg-[linear-gradient(to_right,transparent_0%,red_35%,red_65%,transparent_100%)] text-white mb-4">
         <span class="text-3xl font-extrabold">
           OPEN {{ targetDateLabel }}
         </span>
       </div>
-      <div class="grid auto-cols-max grid-flow-col gap-5 text-center mb-8 min-2xl:mb-32">
+      <div class="grid auto-cols-max grid-flow-col gap-5 text-center mb-8">
         <div class="flex flex-col bg-[#250906] rounded-2xl justify-center items-center aspect-square p-4">
           <span class="countdown font-mono text-5xl">
             <span :style="`--value:${days}; --digits: 2;`">{{ pad2(days) }}</span>
@@ -90,20 +90,26 @@
           Seg
         </div>
       </div>
+
+        <NuxtLink to="https://discord.gg/eUth6mTQzR" target="_blank" class="mb-8 min-2xl:mb-32">
+          <button class="btn btn-warning btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full">
+            DOWNLOAD NOW
+          </button>
+        </NuxtLink>
     </div>
   </section>
   <section class="flex flex-col items-center min-h-screen bg-[url('/9ddbbce1-86c0-41ab-8ac6-dea76f6bbf28.webp')] bg-cover bg-top p-32">
-        <div class="flex items-center justify-center w-full max-w-[80%] py-3 mb-4 bg-[linear-gradient(to_right,transparent_0%,orange_35%,orange_65%,transparent_100%)] text-[#250906]">
+        <div class="flex items-center justify-center w-full min-md:max-w-[80%] py-3 mb-4 bg-[linear-gradient(to_right,transparent_0%,orange_35%,orange_65%,transparent_100%)] text-[#250906]">
           <h1 class="text-5xl font-extrabold">
             INFORMATIONS
           </h1>
         </div>
-        <p class="text-center text-lg max-w-2/3 mb-8">
+        <p class="text-center text-lg min-md:max-w-2/3 mb-8">
           Basic information about the server.<br>Other informations can be found in the server's <NuxtLink to="https://discord.gg/eUth6mTQzR" class="link link-accent font-bold" external target="_blank">Discord.</NuxtLink>
         </p>
 
         <div
-          class="flex items-center justify-center w-full py-2 mb-1 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          class="flex items-center justify-center w-full py-2 mb-1 min-md:max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
           <div class="flex-1 flex flex-col text-right">
             <span class="text-2xl">500X</span>
           </div>
@@ -113,7 +119,7 @@
         </div>
 
         <div
-          class="flex items-center justify-center w-full py-2 mb-1 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          class="flex items-center justify-center w-full py-2 mb-1 min-md:max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
           <div class="flex-1 flex flex-col text-right">
             <span class="text-2xl">2x all rates</span>
           </div>
@@ -123,7 +129,7 @@
         </div>
 
         <div
-          class="flex items-center justify-center w-full py-2 mb-1 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          class="flex items-center justify-center w-full py-2 mb-1 min-md:max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
           <div class="flex-1 flex flex-col text-right">
             <span class="text-2xl">+400 P.DEF/M.DEF</span>
           </div>
@@ -133,7 +139,7 @@
         </div>
 
         <div
-          class="flex items-center justify-center w-full py-2 mb-1 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          class="flex items-center justify-center w-full py-2 mb-1 min-md:max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
           <div class="flex-1 flex flex-col text-right">
             <span class="text-2xl">52+4 Slots Schema Npc</span>
           </div>
@@ -143,7 +149,7 @@
         </div>
 
         <div
-          class="flex items-center justify-center w-full py-2 mb-16 max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
+          class="flex items-center justify-center w-full py-2 mb-16 min-md:max-w-[70%] bg-[linear-gradient(to_right,transparent_0%,#250906_35%,#250906_65%,transparent_100%)] text-base-content gap-4">
           <div class="flex-1 flex flex-col text-right">
             <span class="text-2xl">Safe +12 Max +25</span>
           </div>

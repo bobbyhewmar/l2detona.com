@@ -165,7 +165,7 @@
         </NuxtLink>
 
   </section>
-  <dialog id="open_beta_detona" class="modal" open>
+  <dialog id="open_beta_detona" class="modal">
     <div class="relative modal-box aspect-[1080/1350] flex flex-col p-0">
       <iframe src="https://discord.com/widget?id=1449403936007262443&theme=dark" width="100%" height="100%" class="aspect-[1080/1350]" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" />
     </div>

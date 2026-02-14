@@ -91,7 +91,7 @@
         </div>
       </div>
 
-        <NuxtLink to="https://discord.gg/eUth6mTQzR" target="_blank" class="mb-8 min-2xl:mb-32">
+        <NuxtLink to="https://discord.gg/dhxpqSUj2G" target="_blank" class="mb-8 min-2xl:mb-32">
           <button class="btn btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full bg-orange-400 hover:bg-orange-500">
             DOWNLOAD NOW
           </button>
@@ -105,7 +105,7 @@
           </h1>
         </div>
         <p class="text-center text-lg min-md:max-w-2/3 mb-8">
-          Basic information about the server.<br>Other informations can be found in the server's <NuxtLink to="https://discord.gg/eUth6mTQzR" class="link link-accent font-bold" external target="_blank">Discord.</NuxtLink>
+          Basic information about the server.<br>Other informations can be found in the server's <NuxtLink to="https://discord.gg/VJURzNdVzp" class="link link-accent font-bold" external target="_blank">Discord.</NuxtLink>
         </p>
 
         <div
@@ -158,7 +158,7 @@
           </div>
         </div>
 
-        <NuxtLink to="https://discord.gg/eUth6mTQzR" target="_blank">
+        <NuxtLink to="https://discord.gg/dhxpqSUj2G" target="_blank">
           <button class="btn btn-warning btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full">
             DOWNLOAD NOW
           </button>

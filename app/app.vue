@@ -38,8 +38,9 @@
           <li><a>Item 3</a></li>
         </ul>
       </div> -->
-      <div class="navbar-end">
+      <div class="navbar-end gap-2">
         <NuxtLink to="https://app.l2detona.com/register" :external="true" class="btn bg-orange-400 hover:bg-orange-500 text-[#250906] font-extrabold rounded-full">CREATE ACCOUNT</NuxtLink>
+        <button class="btn bg-white hover:bg-gray-100 text-black font-extrabold rounded-full" @click="openDownloadModal">DOWNLOAD NOW</button>
       </div>
     </div>
   </nav>
@@ -90,14 +91,14 @@
           Secs
         </div>
       </div>
-
-        <NuxtLink to="https://discord.gg/dhxpqSUj2G" target="_blank" class="mb-8 min-2xl:mb-32">
-          <button class="btn btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full bg-orange-400 hover:bg-orange-500">
-            DOWNLOAD NOW
-          </button>
-        </NuxtLink>
+      <NuxtLink to="https://discord.gg/dhxpqSUj2G" target="_blank">
+        <button class="btn bg-orange-400 hover:bg-orange-500 btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full">
+          JOIN DISCORD
+        </button>
+      </NuxtLink>
     </div>
   </section>
+
   <section class="flex flex-col items-center min-h-screen bg-[url('/9ddbbce1-86c0-41ab-8ac6-dea76f6bbf28.webp')] bg-cover bg-top p-32">
         <div class="flex items-center justify-center w-full min-md:max-w-[80%] py-3 mb-4 bg-[linear-gradient(to_right,transparent_0%,orange_35%,orange_65%,transparent_100%)] text-[#250906]">
           <h1 class="text-5xl font-extrabold">
@@ -158,13 +159,12 @@
           </div>
         </div>
 
-        <NuxtLink to="https://discord.gg/dhxpqSUj2G" target="_blank">
-          <button class="btn btn-warning btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full">
-            DOWNLOAD NOW
-          </button>
-        </NuxtLink>
+        <button class="btn btn-warning btn-xl gap-4 border-none text-[#250906] font-extrabold rounded-full" @click="openDownloadModal">
+          DOWNLOAD NOW
+        </button>
 
   </section>
+
   <dialog id="open_beta_detona" class="modal">
     <div class="relative modal-box aspect-[1080/1350] flex flex-col p-0">
       <iframe src="https://discord.com/widget?id=1449403936007262443&theme=dark" width="100%" height="100%" class="aspect-[1080/1350]" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" />
@@ -179,6 +179,36 @@
           <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </button>
+    </form>
+  </dialog>
+
+  <dialog id="download_modal" class="modal">
+    <div class="modal-box max-w-3xl">
+      <h3 class="text-lg font-bold mb-4">Download options</h3>
+      <div class="overflow-x-auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in downloads" :key="item.id">
+              <td>{{ item.name }}</td>
+              <td>{{ item.description }}</td>
+              <td width="20%">
+                <NuxtLink v-if="canDownload" :external="true" :to="item.url" target="_blank" rel="noopener" class="btn btn-primary btn-block rounded-full btn-sm">Download</NuxtLink>
+                <button v-else class="btn btn-primary btn-block rounded-full btn-sm" disabled>{{ gateLabel }}</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
     </form>
   </dialog>
 </template>
@@ -203,19 +233,48 @@ const targetDateLabel = `${dd}/${mm}/${yy} ${hh}H ${tzLabel}`
 
 let timer: number
 
+interface DownloadItem {
+  id: string
+  name: string
+  description: string
+  url: string
+}
+
+const downloads = ref<DownloadItem[]>([
+  { id: '1', name: 'Client Full (4.1GB)', description: 'Full game client download (Mediafire)', url: 'https://www.mediafire.com/file/e3ojgfm1jo8uxxa/L2DETONA_500X_CLIENT_FULL.zip/file' },
+  { id: '2', name: 'Client Full (4.1GB)', description: 'Full game client download (Google Drive)', url: 'https://drive.google.com/file/d/1p1D6KAhY0H2mwcoBj1aF2_JHgq1B7ayW/view?usp=drive_link' },
+  { id: '3', name: 'Client Full (4.1GB)', description: 'Full game client download (Mega)', url: 'https://mega.nz/file/HsR3VIbZ#w5WnX3Rlp4xl0e_BMoS3PbjHigQgaKXfQ4qaQ-BfFzk' },
+  { id: '4', name: 'Patch (1.1GB)', description: 'Server patch', url: 'https://example.com/patch.zip' },
+])
+
+const availableFrom = targetDate - (1 * 60 * 60 * 1000)
+const canDownload = ref(false)
+const gateLabel = ref('')
+
+const formatHMS = (ms: number) => {
+  const total = Math.max(0, Math.floor(ms / 1000))
+  const h = Math.floor(total / 3600)
+  const m = Math.floor((total % 3600) / 60)
+  const s = total % 60
+  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+}
+
 const updateCountdown = () => {
   const now = Date.now()
   const diff = targetDate - now
 
   if (diff <= 0) {
     days.value = hours.value = minutes.value = seconds.value = 0
-    return
+  } else {
+    days.value = Math.floor(diff / (1000 * 60 * 60 * 24))
+    hours.value = Math.floor((diff / (1000 * 60 * 60)) % 24)
+    minutes.value = Math.floor((diff / (1000 * 60)) % 60)
+    seconds.value = Math.floor((diff / 1000) % 60)
   }
 
-  days.value = Math.floor(diff / (1000 * 60 * 60 * 24))
-  hours.value = Math.floor((diff / (1000 * 60 * 60)) % 24)
-  minutes.value = Math.floor((diff / (1000 * 60)) % 60)
-  seconds.value = Math.floor((diff / 1000) % 60)
+  const gate = availableFrom - now
+  canDownload.value = gate <= 0
+  gateLabel.value = canDownload.value ? 'Download' : formatHMS(gate)
 }
 
 const pad2 = (value: number) => String(value).padStart(2, '0')
@@ -228,4 +287,8 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(timer)
 })
+
+const openDownloadModal = () => {
+  (document.getElementById('download_modal') as HTMLDialogElement)?.showModal()
+}
 </script>

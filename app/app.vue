@@ -244,7 +244,6 @@ const downloads = ref<DownloadItem[]>([
   { id: '1', name: 'Client Full (4.1GB)', description: 'Full game client download (Mediafire)', url: 'https://www.mediafire.com/file/e3ojgfm1jo8uxxa/L2DETONA_500X_CLIENT_FULL.zip/file' },
   { id: '2', name: 'Client Full (4.1GB)', description: 'Full game client download (Google Drive)', url: 'https://drive.google.com/file/d/1p1D6KAhY0H2mwcoBj1aF2_JHgq1B7ayW/view?usp=drive_link' },
   { id: '3', name: 'Client Full (4.1GB)', description: 'Full game client download (Mega)', url: 'https://mega.nz/file/HsR3VIbZ#w5WnX3Rlp4xl0e_BMoS3PbjHigQgaKXfQ4qaQ-BfFzk' },
-  { id: '4', name: 'Patch (1.1GB)', description: 'Server patch (Mediafire)', url: 'https://www.mediafire.com/file/98ktshaidwmlet2/patch_beta_27-02-2026.zip/file' },
 ])
 
 const availableFrom = targetDate - (1 * 60 * 60 * 1000)

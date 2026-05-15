@@ -26,5 +26,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/image'],
+  modules: ['@nuxt/image', '@nuxt/fonts'],
+  
+  fonts: {
+    families: [
+      // only resolve this font with the `google` provider
+      { name: 'Onest', provider: 'google' },
+    ]
+  }
 })

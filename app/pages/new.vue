@@ -1,13 +1,40 @@
 <template>
+    <div
+        v-if="isOpen('servers-menu')"
+        id="servers-menu"
+        class="bg-black/85 w-full left-0 top-[80px] flex fixed z-20 min-h-64 backdrop-blur-xs py-4"
+        @click.self="close('servers-menu')"
+    >
+        <div class="w-full max-w-[1366px] flex mx-auto px-2">
+            <!-- name of each tab group should be unique -->
+            <div class="tabs tabs-border self-start">
+                <input type="radio" name="servers-tab" class="tab px-8" aria-label="Server name 8x" checked />
+                <div class="tab-content rounded-none -mt-0.5 border-t border-t-gray-800 pt-6 px-2">Tab content 1</div>
+
+                <input type="radio" name="servers-tab" class="tab px-8" aria-label="Server name 500x" />
+                <div class="tab-content rounded-none -mt-0.5 border-t border-t-gray-800 pt-6 px-2">Tab content 2</div>
+
+                <input type="radio" name="servers-tab" class="tab px-8" aria-label="Server name 1x" />
+                <div class="tab-content rounded-none -mt-0.5 border-t border-t-gray-800 pt-6 px-2">Tab content 3</div>
+            </div>
+        </div>
+    </div>
     <div class="w-full bg-[#1F2426] p-0 m-0 font-[Onest]">
         <div class="w-full pb-16 px-16 inline-flex flex-col justify-start items-center gap-12 bg-[url('/page-bg.webp')] bg-top bg-contain bg-no-repeat">
             <header class="sticky top-0 z-10 backdrop-blur-md w-full inline-flex">
                 <div class="w-full h-20 max-w-[1366px] inline-flex justify-between items-center mx-auto">
                     <div class="flex justify-start items-center gap-6">
                         <img class="h-11" src="/logo_new.webp" />
-                        <div class="w-[1px] h-6 bg-white"></div>
+                        <div class="w-px h-6 bg-white"></div>
                         <div class="flex justify-start items-center gap-8">
-                            <div class="flex justify-start items-center gap-2">
+                            <button
+                                type="button"
+                                class="btn rounded-lg flex justify-start items-center gap-2"
+                                :class="isOpen('servers-menu') ? 'btn-accent' : 'btn-ghost btn-accent'"
+                                aria-controls="servers-menu"
+                                :aria-expanded="isOpen('servers-menu')"
+                                @click.prevent="toggle('servers-menu')"
+                            >
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_2038_41)">
                                         <path
@@ -20,8 +47,8 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <div class="justify-start text-slate-100 text-sm">Servers</div>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div class="justify-start text-slate-100 text-sm font-normal">Servers</div>
+                                <svg :class="{'rotate-180' : isOpen('servers-menu')}" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_2046_408)">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                             d="M12.707 15.707C12.5195 15.8945 12.2652 15.9998 12 15.9998C11.7348 15.9998 11.4805 15.8945 11.293 15.707L5.63601 10.05C5.5405 9.95776 5.46431 9.84742 5.41191 9.72541C5.3595 9.60341 5.33191 9.47219 5.33076 9.33941C5.3296 9.20663 5.3549 9.07495 5.40519 8.95205C5.45547 8.82916 5.52972 8.7175 5.62361 8.62361C5.71751 8.52972 5.82916 8.45547 5.95205 8.40519C6.07495 8.3549 6.20663 8.3296 6.33941 8.33076C6.47219 8.33191 6.60341 8.3595 6.72541 8.41191C6.84742 8.46431 6.95776 8.5405 7.05001 8.63601L12 13.586L16.95 8.63601C17.1386 8.45385 17.3912 8.35305 17.6534 8.35533C17.9156 8.35761 18.1664 8.46278 18.3518 8.64819C18.5372 8.8336 18.6424 9.08441 18.6447 9.34661C18.647 9.6088 18.5462 9.86141 18.364 10.05L12.707 15.707Z"
@@ -33,31 +60,31 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                            </div>
-                            <div class="flex justify-start items-center gap-2">
+                            </button>
+                            <NuxtLink to="https://discord.gg/VJURzNdVzp" target="_blank" :external="true" class="flex justify-start items-center gap-2 text-slate-100 hover:text-accent ease-in-out duration-300">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M8.25002 12C8.25002 11.7033 8.33799 11.4133 8.50281 11.1666C8.66763 10.92 8.9019 10.7277 9.17599 10.6142C9.45008 10.5006 9.75168 10.4709 10.0427 10.5288C10.3336 10.5867 10.6009 10.7296 10.8107 10.9393C11.0205 11.1491 11.1633 11.4164 11.2212 11.7074C11.2791 11.9983 11.2494 12.2999 11.1358 12.574C11.0223 12.8481 10.83 13.0824 10.5834 13.2472C10.3367 13.412 10.0467 13.5 9.75002 13.5C9.35219 13.5 8.97066 13.342 8.68936 13.0607C8.40805 12.7794 8.25002 12.3978 8.25002 12ZM14.25 13.5C14.5467 13.5 14.8367 13.412 15.0834 13.2472C15.33 13.0824 15.5223 12.8481 15.6358 12.574C15.7494 12.2999 15.7791 11.9983 15.7212 11.7074C15.6633 11.4164 15.5205 11.1491 15.3107 10.9393C15.1009 10.7296 14.8336 10.5867 14.5427 10.5288C14.2517 10.4709 13.9501 10.5006 13.676 10.6142C13.4019 10.7277 13.1676 10.92 13.0028 11.1666C12.838 11.4133 12.75 11.7033 12.75 12C12.75 12.3978 12.9081 12.7794 13.1894 13.0607C13.4707 13.342 13.8522 13.5 14.25 13.5ZM22.125 6V18C22.125 18.4973 21.9275 18.9742 21.5758 19.3258C21.2242 19.6775 20.7473 19.875 20.25 19.875H7.91908L4.96877 22.4222L4.95752 22.4325C4.62141 22.7174 4.19532 22.8742 3.7547 22.875C3.47957 22.8744 3.20789 22.8136 2.95877 22.6969C2.63418 22.5481 2.35934 22.3089 2.16714 22.0079C1.97494 21.707 1.87352 21.3571 1.87502 21V6C1.87502 5.50272 2.07256 5.02581 2.42419 4.67417C2.77582 4.32254 3.25274 4.125 3.75002 4.125H20.25C20.7473 4.125 21.2242 4.32254 21.5758 4.67417C21.9275 5.02581 22.125 5.50272 22.125 6ZM19.875 6.375H4.12502V20.1778L6.76502 17.8978C6.96908 17.7212 7.23013 17.6243 7.50002 17.625H19.875V6.375Z"
-                                        fill="#EDF2F6" />
+                                        fill="currentColor" />
                                 </svg>
                                 <div class="justify-start text-slate-100 text-sm">Community</div>
-                            </div>
-                            <div class="flex justify-start items-center gap-2">
+                            </NuxtLink>
+                            <NuxtLink to="https://app.l2detona.com/news" :external="true" class="flex justify-start items-center gap-2 text-slate-100 hover:text-accent ease-in-out duration-300">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M16 3C16.7652 2.99996 17.5015 3.29233 18.0583 3.81728C18.615 4.34224 18.9501 5.06011 18.995 5.824L19 6V16H19.75C20.397 16 20.93 16.492 20.994 17.122L21 17.25V19C21 19.7652 20.7077 20.5015 20.1827 21.0583C19.6578 21.615 18.9399 21.9501 18.176 21.995L18 22H8C7.23479 22 6.49849 21.7077 5.94174 21.1827C5.38499 20.6578 5.04989 19.9399 5.005 19.176L5 19V9H3.25C2.94054 9.00014 2.64203 8.88549 2.41223 8.67823C2.18244 8.47097 2.03769 8.18583 2.006 7.878L2 7.75V6C1.99996 5.23479 2.29233 4.49849 2.81728 3.94174C3.34224 3.38499 4.06011 3.04989 4.824 3.005L5 3H16ZM16 5H7V19C7 19.2652 7.10536 19.5196 7.29289 19.7071C7.48043 19.8946 7.73478 20 8 20C8.26522 20 8.51957 19.8946 8.70711 19.7071C8.89464 19.5196 9 19.2652 9 19V17.25C9 16.56 9.56 16 10.25 16H17V6C17 5.73478 16.8946 5.48043 16.7071 5.29289C16.5196 5.10536 16.2652 5 16 5ZM19 18H11V19C11 19.35 10.94 19.687 10.83 20H18C18.2652 20 18.5196 19.8946 18.7071 19.7071C18.8946 19.5196 19 19.2652 19 19V18ZM12 12C12.2652 12 12.5196 12.1054 12.7071 12.2929C12.8946 12.4804 13 12.7348 13 13C13 13.2652 12.8946 13.5196 12.7071 13.7071C12.5196 13.8946 12.2652 14 12 14H10C9.73478 14 9.48043 13.8946 9.29289 13.7071C9.10536 13.5196 9 13.2652 9 13C9 12.7348 9.10536 12.4804 9.29289 12.2929C9.48043 12.1054 9.73478 12 10 12H12ZM14 8C14.2652 8 14.5196 8.10536 14.7071 8.29289C14.8946 8.48043 15 8.73478 15 9C15 9.26522 14.8946 9.51957 14.7071 9.70711C14.5196 9.89464 14.2652 10 14 10H10C9.73478 10 9.48043 9.89464 9.29289 9.70711C9.10536 9.51957 9 9.26522 9 9C9 8.73478 9.10536 8.48043 9.29289 8.29289C9.48043 8.10536 9.73478 8 10 8H14ZM5 5C4.75507 5.00003 4.51866 5.08996 4.33563 5.25272C4.15259 5.41547 4.03566 5.63975 4.007 5.883L4 6V7H5V5Z"
-                                        fill="#EDF2F6" />
+                                        fill="currentColor" />
                                 </svg>
                                 <div class="justify-start text-slate-100 text-sm">News</div>
-                            </div>
-                            <div class="flex justify-start items-center gap-2">
+                            </NuxtLink>
+                            <NuxtLink to="https://lineage2wiki.org" target="_blank" :external="true" class="flex justify-start items-center gap-2 text-slate-100 hover:text-accent ease-in-out duration-300">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M21.4 11.6L12.4 2.6C12 2.2 11.5 2 11 2H4C2.9 2 2 2.9 2 4V11C2 11.5 2.2 12 2.6 12.4L11.6 21.4C12 21.8 12.5 22 13 22C13.5 22 14 21.8 14.4 21.4L21.4 14.4C21.8 14 22 13.5 22 13C22 12.5 21.8 12 21.4 11.6ZM13 20L4 11V4H11L20 13M6.5 5C7.3 5 8 5.7 8 6.5C8 7.3 7.3 8 6.5 8C5.7 8 5 7.3 5 6.5C5 5.7 5.7 5 6.5 5ZM10.1 8.9L11.5 7.5L17 13L15.6 14.4L10.1 8.9ZM7.6 11.4L9 10L13 14L11.6 15.4L7.6 11.4Z"
-                                        fill="#EDF2F6" />
+                                        fill="currentColor" />
                                 </svg>
                                 <div class="justify-start text-slate-100 text-sm">Wiki</div>
-                            </div>
+                            </NuxtLink>
                         </div>
                     </div>
                     <div class="flex justify-start items-center gap-6">
@@ -68,7 +95,7 @@
                                     d="M3.005 12L3 6.408L9.8 5.485V12.002H3.005V12ZM11 5.32L19.997 4V12H11V5.32ZM20.067 13L19.998 21L10.933 19.725L11 13H20.067ZM9.8 19.58L3.005 18.649V13H9.8V19.58Z"
                                     fill="white" />
                             </svg>
-                            <div class="justify-start text-slate-100 text-xs">Download Detona</div>
+                            <div class="justify-start text-slate-100 text-xs">Download for windows</div>
                         </button>
                         <button class="px-4 py-2 bg-blue-700 rounded-lg flex justify-center items-center gap-2">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,9 +125,9 @@
                 </div>
             </header>
             <div
-                class="w-full h-80 max-w-[1366px] px-16 rounded-2xl inline-flex justify-center items-center gap-4  bg-[url(/bg-hero.webp)] bg-center object-cover ">
-                <div class="flex-1 self-stretch relative inline-flex flex-col justify-start items-start gap-4">
-                    <img class="h-96 left-0 bottom-0 absolute" src="/hero_pin.webp" />
+                class="w-full h-80 max-w-[1366px] px-16 rounded-2xl inline-flex justify-center items-center  bg-[url(/bg-hero.webp)] bg-center object-cover ">
+                <div class="w-[40%] self-stretch relative">
+                    <img class="h-96 aspect-[512/412] object-contain object-bottom left-0 bottom-0 absolute" src="/hero_pin.webp" />
                 </div>
                 <div class="flex-1 inline-flex flex-col justify-center items-start gap-8">
                     <div class="justify-start text-white text-3xl font-bold ">The Home of Lineage</div>
@@ -162,7 +189,7 @@
                                     fill="white" />
                             </svg>
 
-                            <div class="justify-start text-slate-100 text-base font-medium ">Download Detona
+                            <div class="justify-start text-slate-100 text-base font-medium ">Download for windows
                             </div>
                         </div>
                     </div>
@@ -496,5 +523,21 @@
 <script setup lang="ts">
 useHead({
     title: 'L2Detona | O melhor servidor de Lineage 2 custom do Brasil!',
+})
+
+const { isOpen, toggle, close, closeAll } = useUiMenus()
+
+function onKeydown(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+        closeAll()
+    }
+}
+
+onMounted(() => {
+    window.addEventListener('keydown', onKeydown)
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('keydown', onKeydown)
 })
 </script>

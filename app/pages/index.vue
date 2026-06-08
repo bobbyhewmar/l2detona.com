@@ -241,9 +241,9 @@ interface DownloadItem {
 }
 
 const downloads = ref<DownloadItem[]>([
-  { id: '1', name: 'Client Full (4.1GB)', description: 'Full game client download (Mediafire)', url: 'https://www.mediafire.com/file/zuxg5zgasff8j8h/client.l2detona.com.zip/file' },
-  { id: '2', name: 'Client Full (4.1GB)', description: 'Full game client download (Google Drive)', url: 'https://drive.google.com/file/d/1Dl7j5FIgNFGXeLBlPmubJKN7Zo0OxYJP/view?usp=sharing' },
-  { id: '3', name: 'Client Full (4.1GB)', description: 'Full game client download (Mega)', url: 'https://mega.nz/file/cjVj3JQb#uXtTi5fsBZl_-9OPW-uopsm-RS1-stCj10NzvzfJ_vU' },
+  { id: '1', name: 'Client Full (4.1GB)', description: 'Full game client download (Mediafire)', url: 'https://www.mediafire.com/file/22ofbzqoe9awlm9/client_full_l2detona.zip/file' },
+  { id: '2', name: 'Client Full (4.1GB)', description: 'Full game client download (Google Drive)', url: 'https://drive.google.com/file/d/1Ep80753G1mUgP2D2BZNysIyVp9Tizjdp/view?usp=sharing' },
+  { id: '3', name: 'Client Full (4.1GB)', description: 'Full game client download (Mega)', url: 'https://mega.nz/file/Bz9FzDYS#roqk5-kgR8vUb6jaGCZp5IuT2MNIV0m23xswRHhAEe4' },
 ])
 
 const availableFrom = targetDate - (1 * 60 * 60 * 1000)

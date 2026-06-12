@@ -1,0 +1,111 @@
+{
+  "common": {
+    "servers": "Servidores",
+    "community": "Comunidade",
+    "news": "Notícias",
+    "wiki": "Wiki",
+    "account": "Conta",
+    "login": "Entrar",
+    "register": "Cadastrar",
+    "support": "Suporte",
+    "downloadWindows": "Download para Windows",
+    "download": "Download"
+  },
+  "league": {
+    "meta": {
+      "title": "L2Detona | League of Lineage"
+    },
+    "common": {
+      "serverOnline": "Servidor online agora",
+      "comingSoon": "A abertura está chegando",
+      "online": "Online",
+      "soon": "Em breve",
+      "neverWipe": "Sem wipe",
+      "noPayToWin": "Sem pay to win",
+      "noDualbox": "Sem dualbox"
+    },
+    "announcement": "O servidor L2Detona.com está sob nova direção.",
+    "hero": {
+      "eyebrow": "League of Lineage",
+      "title": "O Lineage II Detona entrou em uma nova era: chegou o League of Lineage",
+      "description": "Escolha sua classe, evolua durante a partida, destrua torres, vença teamfights e domine o mapa em batalhas instanciadas intensas e estratégicas.",
+      "primaryCta": "Download para Windows",
+      "secondaryCta": "Cadastre-se agora"
+    },
+    "intro": {
+      "title": "League of Lineage",
+      "description": "League of Lineage é uma nova modalidade competitiva do L2Detona.com que coloca duas equipes de seis jogadores frente a frente em disputas estratégicas dentro de uma arena desenvolvida para testar habilidade, coordenação e tomada de decisão."
+    },
+    "classes": {
+      "title": "Escolha entre as classes disponíveis",
+      "description": "Seja Warrior, Mage ou Rogue e experimente diferentes estratégias.",
+      "soonVideo": "Vídeo em breve",
+      "playNow": "Assistir agora",
+      "previewAriaLabel": "Prévia em vídeo da classe {name}"
+    },
+    "howItWorks": {
+      "eyebrow": "Como Funciona",
+      "title": "Entre, evolua, lute e destrua o Nexus adversário!",
+      "description": "Um estilo de jogo justo, onde o que realmente importa é a estratégia e a habilidade do jogador.",
+      "steps": {
+        "step1": "Selecione uma das classes disponíveis.",
+        "step2": "Faça jungle para acumular Adena e evoluir seus equipamentos.",
+        "step3": "Elimine minions adversários e obtenha level para evoluir seu herói.",
+        "step4": "Jogue de forma estratégica e ajude seu time a conquistar espaço.",
+        "step5": "Destrua as torres inimigas.",
+        "step6": "Avance até a base e finalize o Nexus adversário."
+      }
+    },
+    "servers": {
+      "eyebrow": "Nossos Servidores",
+      "title": "Conheça os servidores disponíveis",
+      "description": "L ][ Detona é um projeto desenvolvido para durar por longo tempo, com uma comunidade ativa e uma plataforma confiável.",
+      "envolved": {
+        "name": "Detona Envolved",
+        "badge": "Online",
+        "description": "Servidor Interlude 500x focado em PvP. Nossa missão é inovar o cenário PvP com modalidades exclusivas."
+      },
+      "highFive": {
+        "name": "Detona High Five",
+        "badge": "Em breve",
+        "description": "Servidor H5 20x focado em campanha. Nossa missão é trazer a nostalgia dos tempos de ouro do Lineage 2."
+      }
+    },
+    "wiki": {
+      "title": "Lineage 2 Wiki",
+      "line1": "Novo no jogo?",
+      "line2": "Criamos uma base de conhecimento com informações sobre as versões mais populares.",
+      "cta": "Lineage2wiki.org"
+    },
+    "desktopApp": {
+      "title": "Baixe o aplicativo para desktop",
+      "description": "Baixe o launcher do Detona e entre para a nossa comunidade.",
+      "cta": "Download para Windows",
+      "imageAlt": "Plataforma Windows"
+    },
+    "footer": {
+      "copyright": "{year} Projeto Game Detona",
+      "menu": "Menu:",
+      "homePage": "Página inicial",
+      "servers": "Servidores:",
+      "documentation": "Documentação:",
+      "serverRules": "Regras do servidor",
+      "privacyPolicy": "Política de privacidade",
+      "termsAndConditions": "Termos e condições",
+      "cookiePolicy": "Política de cookies",
+      "refundPolicy": "Política de reembolso"
+    },
+    "downloadModal": {
+      "title": "Opções de download",
+      "name": "Nome",
+      "platform": "Plataforma",
+      "description": "Descrição",
+      "link": "Link",
+      "close": "Fechar",
+      "clientFull": "Cliente completo (4.1GB)",
+      "mediafireDescription": "Download completo do cliente (MediaFire)",
+      "googleDriveDescription": "Download completo do cliente (Google Drive)",
+      "megaDescription": "Download completo do cliente (Mega)"
+    }
+  }
+}

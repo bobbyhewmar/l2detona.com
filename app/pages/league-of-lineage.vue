@@ -11,13 +11,13 @@
                 <div class="tab-content rounded-none border-t border-t-gray-800 px-2 pt-6 text-sm text-slate-200">
                     <div class="flex-1 pb-8 inline-flex flex-col justify-start items-start gap-6">
                         <div class="inline-flex justify-start items-center gap-3">
-                            <div class="justify-start text-white text-3xl font-bold">Detona Envolved</div>
+                            <div class="justify-start text-white text-3xl font-bold">{{ t('league.servers.envolved.name') }}</div>
                             <div class="px-2 py-1 bg-blue-700 rounded flex justify-center items-center gap-4">
-                                <div class="justify-start text-white text-xs">Online</div>
+                                <div class="justify-start text-white text-xs">{{ t('league.common.online') }}</div>
                             </div>
                         </div>
                         <div class="self-stretch justify-start text-white text-sm">
-                            Servidor interlude 500x focado em PVP, nossa missão é inovar o cenários pvp com modalidades exclusivas
+                            {{ t('league.servers.envolved.description') }}
                         </div>
                         <div class="flex justify-start items-center gap-4">
 
@@ -33,7 +33,7 @@
                                         stroke-linejoin="round" />
                                 </svg>
 
-                                <div class="justify-start text-slate-100 text-xs font-normal ">Never wipe
+                                <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.neverWipe') }}
                                 </div>
                             </div>
                             <div class="flex justify-start items-center gap-2">
@@ -52,16 +52,16 @@
                                         stroke="#CF9B0A" stroke-width="1.33333" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-                                <div class="justify-start text-slate-100 text-xs font-normal ">No pay to win
+                                <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.noPayToWin') }}
                                 </div>
                             </div>
                         </div>
                         <div class="self-stretch bg-neutral-800/30 flex flex-col justify-start items-start">
                             <div class="self-stretch justify-start text-blue-400 text-xs">
                                 <ClientOnly>
-                                    <span>{{ detonaEnvolvedIsOnline ? 'Server is now online' : 'The opening is coming soon' }}</span>
+                                    <span>{{ serverStatusText(detonaEnvolvedIsOnline) }}</span>
                                     <template #fallback>
-                                        <span>The opening is coming soon</span>
+                                        <span>{{ t('league.common.comingSoon') }}</span>
                                     </template>
                                 </ClientOnly>
                             </div>
@@ -81,13 +81,13 @@
                 <div class="tab-content rounded-none border-t border-t-gray-800 px-2 pt-6 text-sm text-slate-200">
                     <div class="flex-1 pb-8 inline-flex flex-col justify-start items-start gap-6">
                         <div class="inline-flex justify-start items-center gap-3">
-                            <div class="justify-start text-white text-3xl font-bold">Detona High Five
+                            <div class="justify-start text-white text-3xl font-bold">{{ t('league.servers.highFive.name') }}
                             </div>
                             <div class="px-2 py-1 bg-blue-700 rounded flex justify-center items-center gap-4">
-                                <div class="justify-start text-white text-xs">Soon</div>
+                                <div class="justify-start text-white text-xs">{{ t('league.common.soon') }}</div>
                             </div>
                         </div>
-                        <div class="self-stretch justify-start text-white text-sm">Servidor H5 20x, focado em campanha, nossa missão é trazer nostalgia dos tempos de ouro do lineage 2.
+                        <div class="self-stretch justify-start text-white text-sm">{{ t('league.servers.highFive.description') }}
                         </div>
                         <div class="flex justify-start items-center gap-4">
         
@@ -103,7 +103,7 @@
                                         stroke-linejoin="round" />
                                 </svg>
 
-                                <div class="justify-start text-slate-100 text-xs font-normal ">Never wipe
+                                <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.neverWipe') }}
                                 </div>
                             </div>
                             <div class="flex justify-start items-center gap-2">
@@ -122,16 +122,16 @@
                                         stroke="#CF9B0A" stroke-width="1.33333" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-                                <div class="justify-start text-slate-100 text-xs font-normal ">No pay to win
+                                <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.noPayToWin') }}
                                 </div>
                             </div>
                         </div>
                         <div class="self-stretch bg-neutral-800/30 flex flex-col justify-start items-start">
                             <div class="self-stretch justify-start text-blue-400 text-xs">
                                 <ClientOnly>
-                                    <span>{{ detonaHighFiveIsOnline ? 'Server is now online' : 'The opening is coming soon' }}</span>
+                                    <span>{{ serverStatusText(detonaHighFiveIsOnline) }}</span>
                                     <template #fallback>
-                                        <span>The opening is coming soon</span>
+                                        <span>{{ t('league.common.comingSoon') }}</span>
                                     </template>
                                 </ClientOnly>
                             </div>
@@ -181,7 +181,7 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <div class="justify-start text-slate-100 text-sm font-normal">Servers</div>
+                                    <div class="justify-start text-slate-100 text-sm font-normal">{{ t('common.servers') }}</div>
                                     <svg :class="{'rotate-180' : isOpen('servers-menu')}" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_2046_408)">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -201,7 +201,7 @@
                                             d="M8.25002 12C8.25002 11.7033 8.33799 11.4133 8.50281 11.1666C8.66763 10.92 8.9019 10.7277 9.17599 10.6142C9.45008 10.5006 9.75168 10.4709 10.0427 10.5288C10.3336 10.5867 10.6009 10.7296 10.8107 10.9393C11.0205 11.1491 11.1633 11.4164 11.2212 11.7074C11.2791 11.9983 11.2494 12.2999 11.1358 12.574C11.0223 12.8481 10.83 13.0824 10.5834 13.2472C10.3367 13.412 10.0467 13.5 9.75002 13.5C9.35219 13.5 8.97066 13.342 8.68936 13.0607C8.40805 12.7794 8.25002 12.3978 8.25002 12ZM14.25 13.5C14.5467 13.5 14.8367 13.412 15.0834 13.2472C15.33 13.0824 15.5223 12.8481 15.6358 12.574C15.7494 12.2999 15.7791 11.9983 15.7212 11.7074C15.6633 11.4164 15.5205 11.1491 15.3107 10.9393C15.1009 10.7296 14.8336 10.5867 14.5427 10.5288C14.2517 10.4709 13.9501 10.5006 13.676 10.6142C13.4019 10.7277 13.1676 10.92 13.0028 11.1666C12.838 11.4133 12.75 11.7033 12.75 12C12.75 12.3978 12.9081 12.7794 13.1894 13.0607C13.4707 13.342 13.8522 13.5 14.25 13.5ZM22.125 6V18C22.125 18.4973 21.9275 18.9742 21.5758 19.3258C21.2242 19.6775 20.7473 19.875 20.25 19.875H7.91908L4.96877 22.4222L4.95752 22.4325C4.62141 22.7174 4.19532 22.8742 3.7547 22.875C3.47957 22.8744 3.20789 22.8136 2.95877 22.6969C2.63418 22.5481 2.35934 22.3089 2.16714 22.0079C1.97494 21.707 1.87352 21.3571 1.87502 21V6C1.87502 5.50272 2.07256 5.02581 2.42419 4.67417C2.77582 4.32254 3.25274 4.125 3.75002 4.125H20.25C20.7473 4.125 21.2242 4.32254 21.5758 4.67417C21.9275 5.02581 22.125 5.50272 22.125 6ZM19.875 6.375H4.12502V20.1778L6.76502 17.8978C6.96908 17.7212 7.23013 17.6243 7.50002 17.625H19.875V6.375Z"
                                             fill="currentColor" />
                                     </svg>
-                                    <div class="justify-start text-slate-100 text-sm">Community</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('common.community') }}</div>
                                 </NuxtLink>
                                 <NuxtLink to="https://app.l2detona.com/news" :external="true" class="flex justify-start items-center gap-2 text-slate-100 hover:text-accent ease-in-out duration-300">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,7 +209,7 @@
                                             d="M16 3C16.7652 2.99996 17.5015 3.29233 18.0583 3.81728C18.615 4.34224 18.9501 5.06011 18.995 5.824L19 6V16H19.75C20.397 16 20.93 16.492 20.994 17.122L21 17.25V19C21 19.7652 20.7077 20.5015 20.1827 21.0583C19.6578 21.615 18.9399 21.9501 18.176 21.995L18 22H8C7.23479 22 6.49849 21.7077 5.94174 21.1827C5.38499 20.6578 5.04989 19.9399 5.005 19.176L5 19V9H3.25C2.94054 9.00014 2.64203 8.88549 2.41223 8.67823C2.18244 8.47097 2.03769 8.18583 2.006 7.878L2 7.75V6C1.99996 5.23479 2.29233 4.49849 2.81728 3.94174C3.34224 3.38499 4.06011 3.04989 4.824 3.005L5 3H16ZM16 5H7V19C7 19.2652 7.10536 19.5196 7.29289 19.7071C7.48043 19.8946 7.73478 20 8 20C8.26522 20 8.51957 19.8946 8.70711 19.7071C8.89464 19.5196 9 19.2652 9 19V17.25C9 16.56 9.56 16 10.25 16H17V6C17 5.73478 16.8946 5.48043 16.7071 5.29289C16.5196 5.10536 16.2652 5 16 5ZM19 18H11V19C11 19.35 10.94 19.687 10.83 20H18C18.2652 20 18.5196 19.8946 18.7071 19.7071C18.8946 19.5196 19 19.2652 19 19V18ZM12 12C12.2652 12 12.5196 12.1054 12.7071 12.2929C12.8946 12.4804 13 12.7348 13 13C13 13.2652 12.8946 13.5196 12.7071 13.7071C12.5196 13.8946 12.2652 14 12 14H10C9.73478 14 9.48043 13.8946 9.29289 13.7071C9.10536 13.5196 9 13.2652 9 13C9 12.7348 9.10536 12.4804 9.29289 12.2929C9.48043 12.1054 9.73478 12 10 12H12ZM14 8C14.2652 8 14.5196 8.10536 14.7071 8.29289C14.8946 8.48043 15 8.73478 15 9C15 9.26522 14.8946 9.51957 14.7071 9.70711C14.5196 9.89464 14.2652 10 14 10H10C9.73478 10 9.48043 9.89464 9.29289 9.70711C9.10536 9.51957 9 9.26522 9 9C9 8.73478 9.10536 8.48043 9.29289 8.29289C9.48043 8.10536 9.73478 8 10 8H14ZM5 5C4.75507 5.00003 4.51866 5.08996 4.33563 5.25272C4.15259 5.41547 4.03566 5.63975 4.007 5.883L4 6V7H5V5Z"
                                             fill="currentColor" />
                                     </svg>
-                                    <div class="justify-start text-slate-100 text-sm">News</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('common.news') }}</div>
                                 </NuxtLink>
                                 <NuxtLink to="https://lineage2wiki.org" target="_blank" :external="true" class="flex justify-start items-center gap-2 text-slate-100 hover:text-accent ease-in-out duration-300">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -217,7 +217,7 @@
                                             d="M21.4 11.6L12.4 2.6C12 2.2 11.5 2 11 2H4C2.9 2 2 2.9 2 4V11C2 11.5 2.2 12 2.6 12.4L11.6 21.4C12 21.8 12.5 22 13 22C13.5 22 14 21.8 14.4 21.4L21.4 14.4C21.8 14 22 13.5 22 13C22 12.5 21.8 12 21.4 11.6ZM13 20L4 11V4H11L20 13M6.5 5C7.3 5 8 5.7 8 6.5C8 7.3 7.3 8 6.5 8C5.7 8 5 7.3 5 6.5C5 5.7 5.7 5 6.5 5ZM10.1 8.9L11.5 7.5L17 13L15.6 14.4L10.1 8.9ZM7.6 11.4L9 10L13 14L11.6 15.4L7.6 11.4Z"
                                             fill="currentColor" />
                                     </svg>
-                                    <div class="justify-start text-slate-100 text-sm">Wiki</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('common.wiki') }}</div>
                                 </NuxtLink>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                                         d="M3.005 12L3 6.408L9.8 5.485V12.002H3.005V12ZM11 5.32L19.997 4V12H11V5.32ZM20.067 13L19.998 21L10.933 19.725L11 13H20.067ZM9.8 19.58L3.005 18.649V13H9.8V19.58Z"
                                         fill="white" />
                                 </svg>
-                                <div class="justify-start text-slate-100 text-xs">Download for windows</div>
+                                <div class="justify-start text-slate-100 text-xs">{{ t('common.downloadWindows') }}</div>
                             </button>
                             <div class="relative">
                                 <button
@@ -248,7 +248,7 @@
                                             d="M20 21C20 18.8783 19.1571 16.8434 17.6569 15.3431C16.1566 13.8429 14.1217 13 12 13C9.87827 13 7.84344 13.8429 6.34315 15.3431C4.84285 16.8434 4 18.8783 4 21"
                                             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <div class="justify-start text-slate-100 text-xs">Account</div>
+                                    <div class="justify-start text-slate-100 text-xs">{{ t('common.account') }}</div>
                                     <svg :class="{ 'rotate-180': isOpen('account-menu') }" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_2046_408)">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -279,7 +279,7 @@
                                         role="menuitem"
                                         @click="close('account-menu')"
                                     >
-                                        Login
+                                        {{ t('common.login') }}
                                     </NuxtLink>
                                     <NuxtLink
                                         to="https://app.l2detona.com/register"
@@ -288,7 +288,7 @@
                                         role="menuitem"
                                         @click="close('account-menu')"
                                     >
-                                        Register
+                                        {{ t('common.register') }}
                                     </NuxtLink>
                                 </div>
                             </div>
@@ -300,21 +300,20 @@
                         </div>
                     </div>
                 </header>
-                <div class="w-full block text-center p-4 absolute top-20 left-0 bg-orange-600 font-bold text-white tracking-[.4rem]">
-                    O SERVIDOR L2DETONA.COM ESTÁ SOB NOVA DIREÇÃO.
+                <div class="w-full block text-center p-4 absolute top-20 left-0 bg-orange-600 font-bold text-white tracking-[.4rem] uppercase">
+                    {{ t('league.announcement') }}
                 </div>
                 <section class="flex w-full max-w-[1366px] px-8 flex-col items-center gap-8 px-6 py-16 mb-24 text-center md:px-10">
                     <div class="inline-flex items-center gap-3 border border-slate-100/15 px-4 py-2 text-xs uppercase tracking-[0.24em] text-blue-300">
-                        <span>League Of Lineage</span>
+                        <span>{{ t('league.hero.eyebrow') }}</span>
                     </div>
 
                     <div class="flex max-w-4xl flex-col items-center gap-5">
                         <h1 class="text-4xl font-bold leading-tight text-white md:text-6xl">
-                            O Lineage II Detona entrou em uma nova era: chegou o League of Lineage
+                            {{ t('league.hero.title') }}
                         </h1>
                         <p class="max-w-3xl text-base leading-7 text-slate-200 md:text-lg">
-                            Escolha sua classe, evolua durante a partida, destrua torres, vença teamfights e domine o mapa
-                            em batalhas instanciadas intensas e estrategicas.
+                            {{ t('league.hero.description') }}
                         </p>
                     </div>
 
@@ -332,13 +331,13 @@
                                     fill="white"
                                 />
                             </svg>
-                            <span>Download for Windows</span>
+                            <span>{{ t('league.hero.primaryCta') }}</span>
                         </button>
                         <NuxtLink
                             to="https://app.l2detona.com/register"
                             class="inline-flex items-center justify-center border-2 border-slate-100/20 px-8 py-4 text-base font-medium text-slate-100 cursor-pointer rounded-xl"
                         >
-                            Cadastre-se agora
+                            {{ t('league.hero.secondaryCta') }}
                         </NuxtLink>
                     </div>
 
@@ -346,9 +345,9 @@
                 <section
                     class="w-full max-w-[1366px] px-16 rounded-2xl inline-flex justify-center items-center  bg-[url(/bg-hero.webp)] bg-center object-cover mb-16">
                     <div class="flex-1 inline-flex flex-col justify-center items-start gap-8 py-18">
-                        <div class="justify-start text-white text-3xl font-bold ">League of Lineage</div>
+                        <div class="justify-start text-white text-3xl font-bold ">{{ t('league.intro.title') }}</div>
                         <div class="self-stretch justify-start text-white text-base leading-6">
-                            League of Lineage é uma nova modalidade competitiva do L2Detona.com que coloca duas equipes de seis jogadores frente a frente em disputas estratégicas dentro de uma arena desenvolvida para testar habilidade, coordenação e tomada de decisão.
+                            {{ t('league.intro.description') }}
                         </div>
                         <div class="self-stretch inline-flex justify-start items-center gap-8">
                             <div class="flex justify-start items-center gap-4">
@@ -360,7 +359,7 @@
                                             fill="#EDF2F6" />
                                     </svg>
 
-                                    <div class="justify-start text-slate-100 text-xs font-normal ">No dualbox
+                                    <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.noDualbox') }}
                                     </div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
@@ -375,7 +374,7 @@
                                             stroke-linejoin="round" />
                                     </svg>
 
-                                    <div class="justify-start text-slate-100 text-xs font-normal ">Never wipe
+                                    <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.neverWipe') }}
                                     </div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
@@ -394,7 +393,7 @@
                                             stroke="#CF9B0A" stroke-width="1.33333" stroke-linecap="round"
                                             stroke-linejoin="round" />
                                     </svg>
-                                    <div class="justify-start text-slate-100 text-xs font-normal ">No pay to win
+                                    <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.noPayToWin') }}
                                     </div>
                                 </div>
                             </div>
@@ -406,9 +405,9 @@
                     </div>
                 </section>
                 <section id="impacto" class="flex w-full max-w-[1366px] px-8 flex-col items-center gap-5 py-6 mb-8 text-center">
-                    <h2 class="text-3xl font-bold text-slate-100 md:text-4xl">Escolha entre as classes disponíveis</h2>
+                    <h2 class="text-3xl font-bold text-slate-100 md:text-4xl">{{ t('league.classes.title') }}</h2>
                     <p class="text-base leading-8 text-slate-300">
-                        Seja Warrior, Mage ou Rogue experimente diferentes estratégias.
+                        {{ t('league.classes.description') }}
                     </p>
                 </section>
                 <section class="w-full max-w-[1366px] grid grid-cols-2 lg:grid-cols-3 justify-start items-start gap-6 mb-16">
@@ -447,7 +446,7 @@
                                                     v-else
                                                     class="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.22),_rgba(11,15,19,0.96)_68%)] px-6 text-center text-sm font-medium text-slate-200"
                                                 >
-                                                    Soon video here
+                                                    {{ t('league.classes.soonVideo') }}
                                                 </div>
                                             </div>
                                         </div>
@@ -458,13 +457,13 @@
                                     <button
                                         type="button"
                                         class="px-6 py-3 bg-blue-700 rounded-2xl inline-flex justify-center items-center gap-4 cursor-pointer"
-                                        :aria-label="`Preview de video da class ${classCard.name}`"
+                                        :aria-label="previewAriaLabel(classCard.name)"
                                     >
                                         <div class="justify-start text-slate-100 text-sm flex items-center gap-2">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.75 2.75V13.25L12.25 8L2.75 2.75Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            Play now
+                                            {{ t('league.classes.playNow') }}
                                         </div>
                                     </button>
                                 </div>
@@ -484,10 +483,10 @@
                     </div>
                 </section>
                 <section id="como-funciona" class="flex w-full max-w-[1366px] px-8 flex-col items-center gap-4 pt-8 mb-16 text-center">
-                    <div class="text-sm uppercase tracking-[0.2em] text-blue-300">Como Funciona</div>
-                    <h2 class="text-3xl font-bold text-slate-100 md:text-4xl">Entre, evolua, lute e destrua o Nexus adversário!</h2>
+                    <div class="text-sm uppercase tracking-[0.2em] text-blue-300">{{ t('league.howItWorks.eyebrow') }}</div>
+                    <h2 class="text-3xl font-bold text-slate-100 md:text-4xl">{{ t('league.howItWorks.title') }}</h2>
                     <p class="text-base leading-8 text-slate-300">
-                        Um estilo de jogo justo, onde o que realmente importa é a estratégia e a habilidade do jogador.
+                        {{ t('league.howItWorks.description') }}
                     </p>
                 </section>
                 <section class="w-full grid lg:grid-cols-2 max-w-[1366px] mx-auto">
@@ -504,10 +503,10 @@
                     </div>
                 </section>
                 <section class="flex w-full max-w-[1366px] px-8 flex-col items-center gap-5 pt-8 text-center mb-16">
-                    <div class="text-sm uppercase tracking-[0.2em] text-blue-300">Nossos Servidores</div>
-                    <h2 class="text-3xl font-bold text-slate-100 md:text-4xl">Conheça os servidores disponíveis</h2>
+                    <div class="text-sm uppercase tracking-[0.2em] text-blue-300">{{ t('league.servers.eyebrow') }}</div>
+                    <h2 class="text-3xl font-bold text-slate-100 md:text-4xl">{{ t('league.servers.title') }}</h2>
                     <p class="text-base leading-8 text-slate-300">
-                        L ][ Detona é um projeto desenvolvido para durar por longo tempo, com uma comunidade ativa e uma plataforma confiável. 
+                        {{ t('league.servers.description') }}
                     </p>
                 </section>
                 <section class="w-full max-w-[1366px] grid lg:grid-cols-2 justify-start items-start gap-6 px-4 mb-16">
@@ -516,13 +515,13 @@
                             src="/angel.webp" />
                         <div class="flex-1 py-8 inline-flex flex-col justify-start items-start gap-4">
                             <div class="inline-flex justify-start items-center gap-3">
-                                <div class="justify-start text-white text-3xl font-bold">Detona Envolved</div>
+                                <div class="justify-start text-white text-3xl font-bold">{{ t('league.servers.envolved.name') }}</div>
                                 <div class="px-2 py-1 bg-blue-700 rounded flex justify-center items-center gap-4">
-                                    <div class="justify-start text-white text-xs">Online</div>
+                                    <div class="justify-start text-white text-xs">{{ t('league.common.online') }}</div>
                                 </div>
                             </div>
                             <div class="self-stretch justify-start text-white text-sm">
-                                Servidor interlude 500x focado em PVP, nossa missão é inovar o cenários pvp com modalidades exclusivas
+                                {{ t('league.servers.envolved.description') }}
                             </div>
                             <div class="flex justify-start items-center gap-4">
 
@@ -538,7 +537,7 @@
                                             stroke-linejoin="round" />
                                     </svg>
 
-                                    <div class="justify-start text-slate-100 text-xs font-normal ">Never wipe
+                                    <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.neverWipe') }}
                                     </div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
@@ -557,16 +556,16 @@
                                             stroke="#CF9B0A" stroke-width="1.33333" stroke-linecap="round"
                                             stroke-linejoin="round" />
                                     </svg>
-                                    <div class="justify-start text-slate-100 text-xs font-normal ">No pay to win
+                                    <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.noPayToWin') }}
                                     </div>
                                 </div>
                             </div>
                             <div class="self-stretch bg-neutral-800/30 flex flex-col justify-start items-start">
                                 <div class="self-stretch justify-start text-blue-400 text-xs">
                                     <ClientOnly>
-                                        <span>{{ detonaEnvolvedIsOnline ? 'Server is now online' : 'The opening is coming soon' }}</span>
+                                        <span>{{ serverStatusText(detonaEnvolvedIsOnline) }}</span>
                                         <template #fallback>
-                                            <span>The opening is coming soon</span>
+                                            <span>{{ t('league.common.comingSoon') }}</span>
                                         </template>
                                     </ClientOnly>
                                 </div>
@@ -586,13 +585,13 @@
                             src="/elf.webp" />
                         <div class="flex-1 py-8 inline-flex flex-col justify-start items-start gap-4">
                             <div class="inline-flex justify-start items-center gap-3">
-                                <div class="justify-start text-white text-3xl font-bold">Detona High Five
+                                <div class="justify-start text-white text-3xl font-bold">{{ t('league.servers.highFive.name') }}
                                 </div>
                                 <div class="px-2 py-1 bg-blue-700 rounded flex justify-center items-center gap-4">
-                                    <div class="justify-start text-white text-xs">Soon</div>
+                                    <div class="justify-start text-white text-xs">{{ t('league.common.soon') }}</div>
                                 </div>
                             </div>
-                            <div class="self-stretch justify-start text-white text-sm">Servidor H5 20x, focado em campanha, nossa missão é trazer nostalgia dos tempos de ouro do lineage 2.
+                            <div class="self-stretch justify-start text-white text-sm">{{ t('league.servers.highFive.description') }}
                             </div>
                             <div class="flex justify-start items-center gap-4">
             
@@ -608,7 +607,7 @@
                                             stroke-linejoin="round" />
                                     </svg>
 
-                                    <div class="justify-start text-slate-100 text-xs font-normal ">Never wipe
+                                    <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.neverWipe') }}
                                     </div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
@@ -627,16 +626,16 @@
                                             stroke="#CF9B0A" stroke-width="1.33333" stroke-linecap="round"
                                             stroke-linejoin="round" />
                                     </svg>
-                                    <div class="justify-start text-slate-100 text-xs font-normal ">No pay to win
+                                    <div class="justify-start text-slate-100 text-xs font-normal ">{{ t('league.common.noPayToWin') }}
                                     </div>
                                 </div>
                             </div>
                             <div class="self-stretch bg-neutral-800/30 flex flex-col justify-start items-start">
                                 <div class="self-stretch justify-start text-blue-400 text-xs">
                                     <ClientOnly>
-                                        <span>{{ detonaHighFiveIsOnline ? 'Server is now online' : 'The opening is coming soon' }}</span>
+                                        <span>{{ serverStatusText(detonaHighFiveIsOnline) }}</span>
                                         <template #fallback>
-                                            <span>The opening is coming soon</span>
+                                            <span>{{ t('league.common.comingSoon') }}</span>
                                         </template>
                                     </ClientOnly>
                                 </div>
@@ -654,14 +653,13 @@
                 </section>
                 <section class="w-full max-w-[1366px] px-24 py-16 rounded-2xl inline-flex justify-center items-center gap-4 bg-[url(/wiki-bg.webp)] bg-center bg-cover">
                     <div class="flex-1 inline-flex flex-col justify-start items-start gap-6">
-                        <div class="self-stretch justify-start text-white text-3xl font-bold">Lineage 2
-                            Wikipedia</div>
+                        <div class="self-stretch justify-start text-white text-3xl font-bold">{{ t('league.wiki.title') }}</div>
                         <div class="self-stretch justify-start text-white text-lg">
-                            New to the game?<br>
-                            We have created knowledge base which includes information about the most popular versions
+                            {{ t('league.wiki.line1') }}<br>
+                            {{ t('league.wiki.line2') }}
                         </div>
                         <NuxtLink to="https://www.lineage2wiki.org/" target="_blank" class="px-6 py-3 bg-blue-700 rounded-lg inline-flex justify-center items-center gap-4">
-                            <div class="justify-start text-slate-100">Lineage2wiki.org
+                            <div class="justify-start text-slate-100">{{ t('league.wiki.cta') }}
                             </div>
                         </NuxtLink>
                     </div>
@@ -675,10 +673,10 @@
                             class="self-stretch py-32 bg-linear-to-b from-[#1F2426] via-[#1F2426]/0 to-[#1F2426] flex flex-col justify-center items-center gap-4"
                         >
                             <div class="flex flex-col justify-center items-center gap-8">
-                                <img class="w-80 h-44" src="/windows-platform.webp" alt="Windows platform" />
-                                <div class="text-center justify-start text-white text-3xl font-bold">Get the desktop app</div>
+                                <img class="w-80 h-44" src="/windows-platform.webp" :alt="t('league.desktopApp.imageAlt')" />
+                                <div class="text-center justify-start text-white text-3xl font-bold">{{ t('league.desktopApp.title') }}</div>
                                 <div class="text-center justify-start text-white text-lg">
-                                    Download Detona launcher aand join our community
+                                    {{ t('league.desktopApp.description') }}
                                 </div>
                                 <button
                                     type="button"
@@ -693,7 +691,7 @@
                                             fill="white"
                                         />
                                     </svg>
-                                    <div class="justify-start text-slate-100 text-base font-medium">Download for windows</div>
+                                    <div class="justify-start text-slate-100 text-base font-medium">{{ t('league.desktopApp.cta') }}</div>
                                 </button>
                             </div>
                         </div>
@@ -702,33 +700,33 @@
                 <footer class="w-full max-w-[1366px] px-8 inline-flex justify-start items-center gap-16">
                     <div class="inline-flex flex-col justify-center items-start gap-6">
                         <img class="h-11" src="/logo_new.webp" alt="L2Detona" />
-                        <div class="text-center justify-start text-slate-500 text-sm font-normal">2026 Game Project Detona</div>
+                        <div class="text-center justify-start text-slate-500 text-sm font-normal">{{ t('league.footer.copyright', { year: currentYear }) }}</div>
                     </div>
                     <div class="w-[878px] inline-flex flex-col justify-start items-start gap-11">
                         <div class="self-stretch inline-flex justify-start items-center gap-8">
                             <div class="flex justify-start items-center gap-8">
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-blue-400 text-sm">Menu:</div>
+                                    <div class="justify-start text-blue-400 text-sm">{{ t('league.footer.menu') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">Home page</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('league.footer.homePage') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">News</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('common.news') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">Community</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('common.community') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">Wiki</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('common.wiki') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">Support</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('common.support') }}</div>
                                 </div>
                             </div>
                             <div class="flex justify-start items-center gap-8">
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-blue-400 text-sm">Servers:</div>
+                                    <div class="justify-start text-blue-400 text-sm">{{ t('league.footer.servers') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
                                     <div class="justify-start text-slate-100 text-sm">Detona IL</div>
@@ -744,22 +742,22 @@
                         <div class="inline-flex justify-start items-center gap-8">
                             <div class="flex justify-start items-center gap-8">
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-blue-400 text-sm">Documentation:</div>
+                                    <div class="justify-start text-blue-400 text-sm">{{ t('league.footer.documentation') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">Server Rules</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('league.footer.serverRules') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">Privacy policy</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('league.footer.privacyPolicy') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">Terms and Conditions</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('league.footer.termsAndConditions') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">Cookie policy</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('league.footer.cookiePolicy') }}</div>
                                 </div>
                                 <div class="flex justify-start items-center gap-2">
-                                    <div class="justify-start text-slate-100 text-sm">Refound policy</div>
+                                    <div class="justify-start text-slate-100 text-sm">{{ t('league.footer.refundPolicy') }}</div>
                                 </div>
                             </div>
                         </div>
@@ -771,15 +769,15 @@
 
     <dialog id="download_modal" class="modal">
         <div class="modal-box max-w-3xl bg-white font-[Onest] text-black">
-            <h3 class="mb-4 text-lg font-bold">Opcoes de download</h3>
+            <h3 class="mb-4 text-lg font-bold">{{ t('league.downloadModal.title') }}</h3>
             <div class="overflow-x-auto">
                 <table class="table">
                     <thead>
                         <tr class="text-black bg-black/25">
-                            <th>Nome</th>
-                            <th>Platform</th>
-                            <th>Descricao</th>
-                            <th>Link</th>
+                            <th>{{ t('league.downloadModal.name') }}</th>
+                            <th>{{ t('league.downloadModal.platform') }}</th>
+                            <th>{{ t('league.downloadModal.description') }}</th>
+                            <th>{{ t('league.downloadModal.link') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -804,7 +802,7 @@
                                     rel="noopener"
                                     class="btn btn-primary btn-block btn-sm rounded-full"
                                 >
-                                    Download
+                                    {{ t('common.download') }}
                                 </NuxtLink>
                             </td>
                         </tr>
@@ -813,15 +811,25 @@
             </div>
         </div>
         <form method="dialog" class="modal-backdrop">
-            <button>close</button>
+            <button>{{ t('league.downloadModal.close') }}</button>
         </form>
     </dialog>
 </template>
 
 <script setup lang="ts">
-useHead({
-    title: 'L2Detona | League of Lineage',
-})
+interface DownloadItem {
+    id: string
+    name: string
+    description: string
+    url: string
+}
+
+const { t } = useI18n()
+const currentYear = new Date().getFullYear()
+
+useHead(() => ({
+    title: t('league.meta.title'),
+}))
 
 const detonaEnvolvedOpensAt = new Date('2026-02-27T20:00:00')
 const detonaHighFiveOpensAt = new Date('2026-08-30T21:00:00')
@@ -835,12 +843,6 @@ const {
     display: detonaHighFiveDisplay,
     isOnline: detonaHighFiveIsOnline,
 } = useCountdown(detonaHighFiveOpensAt)
-
-const heroStats = [
-    { label: 'Formato', value: 'Partidas instanciadas e competitivas' },
-    { label: 'Foco', value: 'Pressao de mapa, teamfight e objetivo' },
-    { label: 'Replay', value: 'Cada match exige leitura e adaptacao' },
-]
 
 const classCards = [
     {
@@ -885,136 +887,47 @@ const classCards = [
         titleImageSrc: '/class/titan-class-name.webp',
         previewVideoSrc: null,
     },
-]
+] as const
 
-const impactPillars = [
-    {
-        kicker: 'Territorio',
-        title: 'Mapa vivo',
-        text: 'Cada rota importa, cada avancada abre espaco e cada erro muda o ritmo da partida.',
-    },
-    {
-        kicker: 'Progressao',
-        title: 'Poder dentro da match',
-        text: 'Voce comeca definido, cresce durante o confronto e sente a evolucao em tempo real.',
-    },
-    {
-        kicker: 'Decisao',
-        title: 'Objetivo acima do caos',
-        text: 'Nao basta trocar dano. Vence quem pressiona melhor, administra vantagem e fecha a base.',
-    },
-]
+const steps = computed(() => [
+    t('league.howItWorks.steps.step1'),
+    t('league.howItWorks.steps.step2'),
+    t('league.howItWorks.steps.step3'),
+    t('league.howItWorks.steps.step4'),
+    t('league.howItWorks.steps.step5'),
+    t('league.howItWorks.steps.step6'),
+])
 
-const featureCards = [
-    {
-        title: 'Partidas instanciadas',
-        text: 'Cada confronto acontece em um ambiente isolado, competitivo e justo, sem interferencia do mundo aberto.',
-    },
-    {
-        title: 'Progressao durante a match',
-        text: 'Seu personagem cresce dentro da partida, desbloqueando forca real conforme avanca no jogo.',
-    },
-    {
-        title: 'Classes com identidade',
-        text: 'Cada classe possui estilo, ritmo e funcao proprios para compor estrategias de equipe.',
-    },
-    {
-        title: 'Torres, rotas e pressao de mapa',
-        text: 'Nao basta matar. E preciso empurrar rota, conquistar espaco e abrir caminho ate a vitoria.',
-    },
-    {
-        title: 'Combate constante',
-        text: 'Teamfights, pickoffs, defesa de base e decisoes rapidas aparecem a cada minuto da partida.',
-    },
-    {
-        title: 'Competitividade de verdade',
-        text: 'Tudo foi desenhado para entregar partidas dinamicas, emocionantes e com alto fator de replay.',
-    },
-]
-
-const steps = [
-    'Selecione uma das classes disponíveis.',
-    'Faça jungle para acumular Adena e evoluir seus equipamentos.',
-    'Elimine minions adversários e obtenha level para evoluir seu herói.',
-    'Jogue de forma estratégica e ajude seu time a conquistar espaco.',
-    'Destrua as torres inimigas.',
-    'Avance ate a base e finalize o Nexus adversario.',
-]
-
-const matchHighlights = [
-    {
-        kicker: 'Virada',
-        title: 'Defesa improvavel',
-        text: 'Uma base quase perdida pode virar o jogo quando a equipe encaixa a luta certa no momento certo.',
-    },
-    {
-        kicker: 'Leitura',
-        title: 'Pickoff que abre rota',
-        text: 'Uma eliminacao precisa muda a pressao do mapa e abre janela para objetivo, torre e controle.',
-    },
-    {
-        kicker: 'Execucao',
-        title: 'Teamfight decisiva',
-        text: 'Sincronia, sangue frio e escolha de alvo definem quem avanca e quem assiste a queda da propria base.',
-    },
-]
-
-const visualHighlights = [
-    {
-        title: 'Rotas sob pressao',
-        text: 'Empurre terreno, responda movimentacoes inimigas e decida quando forcar luta ou objetivo.',
-    },
-    {
-        title: 'Classes com funcao clara',
-        text: 'Entre sabendo seu papel e adapte sua execucao conforme a partida se desenvolve.',
-    },
-    {
-        title: 'Objetivos com peso',
-        text: 'Torres, base e espaco de mapa definem a vitoria tanto quanto eliminacoes bem convertidas.',
-    },
-    {
-        title: 'Ritmo alto',
-        text: 'A partida nao para. Defesa, avancada e reposicionamento exigem atencao constante.',
-    },
-]
-
-const faqItems = [
-    {
-        question: 'O que e o evento MOBA?',
-        answer: 'E um modo de jogo instanciado com foco em estrategia, progressao por partida, destruicao de torres e vitoria por objetivos.',
-    },
-    {
-        question: 'Preciso estar forte no mundo aberto para jogar?',
-        answer: 'Nao. A experiencia foi pensada para a partida acontecer dentro do proprio evento, com regras e progressao proprias.',
-    },
-    {
-        question: 'E focado em PvP?',
-        answer: 'Sim. O evento foi feito para jogadores que gostam de confronto, coordenacao em equipe e disputa por mapa.',
-    },
-]
-
-const downloads = [
+const downloads = computed<DownloadItem[]>(() => [
     {
         id: '1',
-        name: 'Client Full (4.1GB)',
-        description: 'Full game client download (Mediafire)',
+        name: t('league.downloadModal.clientFull'),
+        description: t('league.downloadModal.mediafireDescription'),
         url: 'https://www.mediafire.com/file/sr17ymdrd8fqbs5/CLIENT_FULL_L2DETONA.zip/file',
     },
     {
         id: '2',
-        name: 'Client Full (4.1GB)',
-        description: 'Full game client download (Google Drive)',
+        name: t('league.downloadModal.clientFull'),
+        description: t('league.downloadModal.googleDriveDescription'),
         url: 'https://drive.google.com/file/d/1E93o5gu8BvOIdldL5VGSQZ7mqOK8cBjw/view?usp=sharing',
     },
     {
         id: '3',
-        name: 'Client Full (4.1GB)',
-        description: 'Full game client download (Mega)',
+        name: t('league.downloadModal.clientFull'),
+        description: t('league.downloadModal.megaDescription'),
         url: 'https://mega.nz/file/8mEGyLgY#yRzDV3Rb4uqv-37GOWxRz3hIXGfbZcXv5MFl6GMTkmU',
     },
-]
+])
 
 const { isOpen, toggle, close, closeAll } = useUiMenus()
+
+function previewAriaLabel(className: string) {
+    return t('league.classes.previewAriaLabel', { name: className })
+}
+
+function serverStatusText(isOnline: boolean) {
+    return isOnline ? t('league.common.serverOnline') : t('league.common.comingSoon')
+}
 
 function openDownloadModal() {
     const modal = document.getElementById('download_modal') as HTMLDialogElement | null

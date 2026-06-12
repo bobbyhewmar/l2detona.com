@@ -1,0 +1,111 @@
+{
+  "common": {
+    "servers": "Servers",
+    "community": "Community",
+    "news": "News",
+    "wiki": "Wiki",
+    "account": "Account",
+    "login": "Login",
+    "register": "Register",
+    "support": "Support",
+    "downloadWindows": "Download for Windows",
+    "download": "Download"
+  },
+  "league": {
+    "meta": {
+      "title": "L2Detona | League of Lineage"
+    },
+    "common": {
+      "serverOnline": "Server is now online",
+      "comingSoon": "The opening is coming soon",
+      "online": "Online",
+      "soon": "Soon",
+      "neverWipe": "Never wipe",
+      "noPayToWin": "No pay to win",
+      "noDualbox": "No dualbox"
+    },
+    "announcement": "The L2Detona.com server is under new management.",
+    "hero": {
+      "eyebrow": "League of Lineage",
+      "title": "Lineage II Detona has entered a new era: League of Lineage has arrived",
+      "description": "Choose your class, evolve during the match, destroy towers, win teamfights, and dominate the map in intense instanced battles.",
+      "primaryCta": "Download for Windows",
+      "secondaryCta": "Create your account"
+    },
+    "intro": {
+      "title": "League of Lineage",
+      "description": "League of Lineage is a new competitive mode at L2Detona.com that places two teams of six players against each other in strategic arena battles designed to test skill, coordination, and decision-making."
+    },
+    "classes": {
+      "title": "Choose from the available classes",
+      "description": "Be a Warrior, Mage, or Rogue and try different strategies.",
+      "soonVideo": "Video coming soon",
+      "playNow": "Watch now",
+      "previewAriaLabel": "Video preview for class {name}"
+    },
+    "howItWorks": {
+      "eyebrow": "How It Works",
+      "title": "Join, evolve, fight, and destroy the enemy Nexus!",
+      "description": "A fair game style where what truly matters is strategy and player skill.",
+      "steps": {
+        "step1": "Select one of the available classes.",
+        "step2": "Farm the jungle to collect Adena and upgrade your equipment.",
+        "step3": "Eliminate enemy minions and gain levels to evolve your hero.",
+        "step4": "Play strategically and help your team gain map control.",
+        "step5": "Destroy the enemy towers.",
+        "step6": "Push into the base and finish the enemy Nexus."
+      }
+    },
+    "servers": {
+      "eyebrow": "Our Servers",
+      "title": "Discover the available servers",
+      "description": "L ][ Detona is a long-term project built to last, with an active community and a reliable platform.",
+      "envolved": {
+        "name": "Detona Envolved",
+        "badge": "Online",
+        "description": "Interlude 500x server focused on PvP. Our mission is to innovate the PvP scene with exclusive modes."
+      },
+      "highFive": {
+        "name": "Detona High Five",
+        "badge": "Soon",
+        "description": "H5 20x server focused on progression. Our mission is to bring back the nostalgia of Lineage 2's golden era."
+      }
+    },
+    "wiki": {
+      "title": "Lineage 2 Wiki",
+      "line1": "New to the game?",
+      "line2": "We have created a knowledge base with information about the most popular versions.",
+      "cta": "Lineage2wiki.org"
+    },
+    "desktopApp": {
+      "title": "Get the desktop app",
+      "description": "Download the Detona launcher and join our community.",
+      "cta": "Download for Windows",
+      "imageAlt": "Windows platform"
+    },
+    "footer": {
+      "copyright": "{year} Detona Game Project",
+      "menu": "Menu:",
+      "homePage": "Home page",
+      "servers": "Servers:",
+      "documentation": "Documentation:",
+      "serverRules": "Server Rules",
+      "privacyPolicy": "Privacy policy",
+      "termsAndConditions": "Terms and Conditions",
+      "cookiePolicy": "Cookie policy",
+      "refundPolicy": "Refund policy"
+    },
+    "downloadModal": {
+      "title": "Download options",
+      "name": "Name",
+      "platform": "Platform",
+      "description": "Description",
+      "link": "Link",
+      "close": "Close",
+      "clientFull": "Full client (4.1GB)",
+      "mediafireDescription": "Full game client download (MediaFire)",
+      "googleDriveDescription": "Full game client download (Google Drive)",
+      "megaDescription": "Full game client download (Mega)"
+    }
+  }
+}

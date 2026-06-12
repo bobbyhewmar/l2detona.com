@@ -13,9 +13,9 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Lineage 2 Detona', // default fallback title
+      title: 'L2Detona - Interlude 500x', // default fallback title
       meta: [
-        { name: 'description', content: 'Lineage 2 Interlude 500x Custom PVP. ' },
+        { name: 'description', content: 'Uma nova forma de jogar Lineage 2. ' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
